@@ -63,14 +63,6 @@ ReactStreetview.propTypes = {
   onPovChanged: PropTypes.func,
 };
 
-ReactStreetview.defaultProps = {
-  streetViewPanoramaOptions: {
-    position: { lat: 46.9171876, lng: 17.8951832 },
-    pov: { heading: 0, pitch: 0 },
-    zoom: 1,
-  },
-};
-
 function mapScriptsToProps(props) {
   const googleMapsApiKey = props.apiKey;
   return {
