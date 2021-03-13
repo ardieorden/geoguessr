@@ -9,21 +9,21 @@ import mapboxgl from "mapbox-gl";
 // This code requires worker-loader@^3.0.0 which requires webpack@^4.0.0
 mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
-// see https://developers.google.com/maps/documentation/javascript/3.exp/reference#StreetViewPanoramaOptions
-const streetViewPanoramaOptions = {
-  position: { lat: 48.8582449, lng: 2.2923836 },
-  pov: { heading: 92.21, pitch: 24.66 },
-  zoom: 1,
-  addressControl: false,
-  imageDateControl: true,
-  showRoadLabels: false,
-};
-
 function Play() {
+  const [lat, setLat] = useState(48.8582449);
+  const [lng, setLng] = useState(2.2923836);
+  const [streetViewPanoramaOptions, setStreetViewPanoramaOptions] = useState({
+    position: { lat, lng },
+    pov: { heading: 92.21, pitch: 24.66 },
+    zoom: 1,
+    addressControl: false,
+    imageDateControl: true,
+    showRoadLabels: false,
+  });
   const [viewport, setViewport] = useState({
-    latitude: 12.473718352618263,
-    longitude: 122.15970582093894,
-    zoom: 5,
+    latitude: lat,
+    longitude: lng,
+    zoom: 10,
     bearing: 0,
     pitch: 0,
   });
@@ -40,7 +40,7 @@ function Play() {
           streetViewPanoramaOptions={streetViewPanoramaOptions}
         />
       </div>
-      <div style={{ width: "49vw", height: "100vh", float: "left" }}>
+      <div style={{ width: "49vw", height: "50vh", float: "left" }}>
         <MapGL
           {...viewport}
           width="100%"
@@ -50,6 +50,7 @@ function Play() {
           onViewportChange={setViewport}
         ></MapGL>
       </div>
+      <div style={{ width: "49vw", height: "50vh", float: "left" }}>hello</div>
     </div>
   );
 }
