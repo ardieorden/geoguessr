@@ -27,6 +27,8 @@ function Play() {
     bearing: 0,
     pitch: 0,
   });
+  const [score, setScore] = useState(0);
+  const [round, setRound] = useState(0);
 
   return (
     <div>
@@ -50,7 +52,12 @@ function Play() {
           onViewportChange={setViewport}
         ></MapGL>
       </div>
-      <div style={{ width: "49vw", height: "50vh", float: "left" }}>hello</div>
+      <div style={{ width: "49vw", height: "50vh", float: "left" }}>
+        <button onClick={() => console.log("Guess")}>Guess</button>
+        <button onClick={() => console.log("Next Round")}>Next Round</button>
+        Score: {score} Round: {round}
+        <div>Maximum score per round is 50,000</div>
+      </div>
     </div>
   );
 }
