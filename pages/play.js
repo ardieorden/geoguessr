@@ -14,6 +14,9 @@ const streetViewPanoramaOptions = {
   position: { lat: 48.8582449, lng: 2.2923836 },
   pov: { heading: 92.21, pitch: 24.66 },
   zoom: 1,
+  addressControl: false,
+  imageDateControl: true,
+  showRoadLabels: false,
 };
 
 function Play() {
@@ -29,7 +32,7 @@ function Play() {
     <div>
       <Head>
         <title>GeoGuessr Clone</title>
-        <link rel="icon" href="/favicon.ico" />"
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ width: "50vw", height: "100vh", float: "left" }}>
         <ReactStreetview
