@@ -229,10 +229,10 @@ function Play() {
       </div>
       {round < 6 ? (
         <div style={{ width: "49vw", height: "50vh", float: "left" }}>
-          <button onClick={() => console.log("Guess")}>Guess</button>
-          <button onClick={() => console.log("Next Round")}>Next Round</button>
-          Score: {formatNumber(score)} Round: {round}
-          <div>Maximum score per round is 50,000</div>
+          Click on the map and guess the <i>initial</i> location. Maximum score
+          per round is 50,000. <br />
+          Score: {formatNumber(score)} <br />
+          Round: {round} <br />
         </div>
       ) : (
         <div>
